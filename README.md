@@ -304,5 +304,5 @@ figures are sourced and which are illustrative.
 └── etl/                        # optional Python bulk-load pipeline
     ├── 01_inspect.py
     ├── 02_load_staging.py
-    └── 03_transform.py
+    └── 03_reconcile_and_transform.sql
 ```
