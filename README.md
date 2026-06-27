@@ -274,7 +274,7 @@ World Tour match history, the Python ETL (`/etl`) runs in three steps:
 
 1. `01_inspect.py` — prints the columns and row counts of each raw CSV (never touches the DB).
 2. `02_load_staging.py` — loads each discipline's CSV into a staging table.
-3. `03_transform.py` — de-duplicates players and inserts matches into the production schema.
+3. `03_reconcile_and_transform.sql` — de-duplicates players and inserts matches into the production schema.
 
 ---
 
