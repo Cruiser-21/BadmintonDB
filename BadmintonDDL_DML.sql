@@ -1,15 +1,13 @@
 -- ============================================================================
 -- BADMINTON ANALYTICS DATABASE — SQL SERVER BUILD SCRIPT
--- Run this entire script in SSMS on a fresh connection.
--- It will create the database, schema, and load all seed data.
--- Requires SQL Server 2016 or later (for DROP TABLE IF EXISTS).
+-- Run this entire script in SSMS
+-- Requires SQL Server 2016 or later
 -- ============================================================================
 
 -- Step 1: Create and select the database
 IF NOT EXISTS (SELECT name FROM sys.databases WHERE name = 'BadmintonDB')
     CREATE DATABASE BadmintonDB;
 GO
-
 USE BadmintonDB;
 GO
 
@@ -17,7 +15,7 @@ GO
 -- SECTION A — SCHEMA (CREATE STATEMENTS)
 -- ============================================================================
 
--- Drop in reverse dependency order so foreign keys don't block the drops.
+-- Drop in reverse dependency order so foreign keys don't block the drops
 DROP TABLE IF EXISTS player_season_stats;
 DROP TABLE IF EXISTS player_rankings;
 DROP TABLE IF EXISTS match_games;
@@ -63,7 +61,7 @@ CREATE TABLE disciplines (
     discipline_name  VARCHAR(30)  NOT NULL
 );
 
--- 4. equipment_categories (Racket, Shoes, String, ...)
+-- 4. equipment_categories (Racket, Shoes, String, etc)
 CREATE TABLE equipment_categories (
     category_id    INTEGER      PRIMARY KEY,
     category_name  VARCHAR(30)  NOT NULL
@@ -255,11 +253,7 @@ CREATE TABLE player_season_stats (
 
 
 -- ============================================================================
--- SECTION B — SEED DATA (INSERT STATEMENTS)
--- ============================================================================
-
--- ============================================================================
--- BADMINTON ANALYTICS DATABASE — SEED DATA (INSERT STATEMENTS ONLY)
+-- BADMINTON ANALYTICS DATABASE — SEED DATA (INSERT STATEMENTS ONLY) -- AI Gathered
 -- ----------------------------------------------------------------------------
 -- Data accuracy notes:
 --   [REAL]        Verified from public sources (BWF rankings ~Apr 2026, brand
